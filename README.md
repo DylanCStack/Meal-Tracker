@@ -1,8 +1,10 @@
 # Meal Tracker
+
 #### Authored by Dylan Stackhouse, 3/31/17
 
 ## Description
 A meal tracker app which allows you view past meals you have added and add new meals to be tracked. Each meal tracks the meal's name, details, and calorie count.
+
 ## Prerequisites
 
 You will need the following things properly installed on your computer.
@@ -21,6 +23,8 @@ You will need the following things properly installed on your computer.
 * $`bower install`
 * $`ng serve`
 * Go to localhost:4200 in a web browser
+
+###### Copyright (c) 2017 Dylan Stackhouse All Rights Reserved. Licensed under the MIT license.
 
 
 ##### Angular CLI
