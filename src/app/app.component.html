@@ -1,6 +1,9 @@
 <h1>{{title}}</h1>
-
+<button (click)="newMeal()">Add New Meal</button>
+<app-new-meal [addingMeal]="addingMeal" (newMealSender)="saveMeal($event)"></app-new-meal>
 <div class="well" *ngFor="let meal of meals">
+  <button class="btn btn-xs btn-warning" >Edit</button>
+  <button class="btn btn-xs btn-danger">Delete</button>
   <h3>{{meal.name}}</h3>
   <p>{{meal.details}}</p>
   <h5>Calories: {{meal.calories}}</h5>

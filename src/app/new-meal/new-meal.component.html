@@ -1,0 +1,18 @@
+<div *ngIf="addingMeal">
+  <form>
+    <div class="form-group">
+      <label>Meal:</label>
+      <input #newName >
+    </div>
+    <div class="form-group">
+      <label>Description/note:</label>
+      <input #newDetails >
+    </div>
+    <div class="form-group">
+      <label>Calories:</label>
+      <input #newCalories >
+    </div>
+
+    <button (click)="trackMeal(newName.value, newDetails.value, newCalories.value)">Add</button>
+  </form>
+</div>
