@@ -3,6 +3,7 @@ import { Meal } from './meal.model';
 // import { MEALS } from './mock-meals';
 import { MealService } from './meal.service';
 import { NewMealComponent } from './new-meal/new-meal.component';
+import { EditMealComponent } from './edit-meal/edit-meal.component';
 
 
 @Component({
@@ -31,8 +32,7 @@ constructor(public MealService: MealService){}
   editingMeal(meal){
     this.selectedMeal=meal;
   }
-
-  saveChanges(){
+  saveChanges(meal){
     this.selectedMeal=null;
   }
 
