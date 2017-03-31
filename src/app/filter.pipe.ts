@@ -16,14 +16,14 @@ export class FilterPipe implements PipeTransform {
     if(LtGt){
       console.log("filtering less than");
       return meals.filter(function(meal){
-        if(meal.calories < calories){
+        if(meal.calories < parseInt(calories)){
           return true;
         }
       });
     } else {
       console.log("filtering greater than");
       return meals.filter(function(meal){
-        if(meal.calories > calories){
+        if(meal.calories > parseInt(calories)){
           return true;
         }
       })
