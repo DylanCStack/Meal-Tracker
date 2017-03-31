@@ -22,6 +22,14 @@ constructor(public MealService: MealService){}
   title = 'Meal Tracker';
   calorieFilter:boolean = true;
 
+  filteringBy(bool){
+    if(this.calorieFilter === bool){
+      return "btn btn-sm btn-success active";
+    } else {
+      return "btn btn-sm btn-success"
+    }
+  }
+
   filterMeals(bool){
     this.calorieFilter = bool;
   }

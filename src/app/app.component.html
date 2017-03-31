@@ -5,8 +5,8 @@
 <hr>
 <div id="filter">
   <label>Filter by calories(default searches by less than input)</label>
-  <button (click)="filterMeals(true)"> < </button>
-  <button (click)="filterMeals(false)"> > </button>
+  <button (click)="filterMeals(true)" [class]="filteringBy(true)"> < </button>
+  <button (click)="filterMeals(false)" [class]="filteringBy(false)"> > </button>
   <input [ngModelOptions]="{standalone: true}" [(ngModel)]="calorieNum">
 </div>
 <div class="well" *ngFor="let meal of meals | filter:calorieNum:calorieFilter">
