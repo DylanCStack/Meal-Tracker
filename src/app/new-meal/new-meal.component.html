@@ -1,4 +1,4 @@
-<div *ngIf="addingMeal">
+<div [class]="divClass" *ngIf="addingMeal">
   <form>
     <div class="form-group">
       <label>Meal:</label>
@@ -10,9 +10,9 @@
     </div>
     <div class="form-group">
       <label>Calories:</label>
-      <input #newCalories >
+      <input #newCalories (keyup)="updateClass(newCalories.value)">
     </div>
 
-    <button (click)="trackMeal(newName.value, newDetails.value, newCalories.value)">Add</button>
+    <button (click)="trackMeal(newName.value, newDetails.value, newCalories.value)" class="btn btn-md btn-default">Add</button>
   </form>
 </div>
