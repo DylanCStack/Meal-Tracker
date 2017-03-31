@@ -36,4 +36,16 @@ constructor(public MealService: MealService){}
     this.selectedMeal=null;
   }
 
+  deleteMeal(meal){
+    if(confirm("Are you sure you want to untrack this meal?")){
+      this.meals = this.meals.filter(function(thisMeal){
+        if(meal === thisMeal){
+          return false;
+        } else {
+          return true;
+        }
+      });
+    }
+  }
+
 }

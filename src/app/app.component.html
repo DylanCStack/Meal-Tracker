@@ -4,7 +4,7 @@
 <app-edit-meal [selectedMeal]="selectedMeal" (editedMealSender)="saveChanges($event)"></app-edit-meal>
 <div class="well" *ngFor="let meal of meals">
   <button class="btn btn-xs btn-warning" (click)="editingMeal(meal)" >Edit</button>
-  <button class="btn btn-xs btn-danger">Delete</button>
+  <button class="btn btn-xs btn-danger" (click)="deleteMeal(meal)">Delete</button>
   <h3>{{meal.name}}</h3>
   <p>{{meal.details}}</p>
   <h5>Calories: {{meal.calories}}</h5>
