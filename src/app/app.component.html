@@ -1,17 +1,24 @@
 <h1>{{title}}</h1>
-<button (click)="newMeal()">Add New Meal</button>
+<button (click)="newMeal()" class="btn btn-md btn-primary">Add New Meal</button>
 <app-new-meal [addingMeal]="addingMeal" (newMealSender)="saveMeal($event)"></app-new-meal>
 <app-edit-meal [selectedMeal]="selectedMeal" (editedMealSender)="saveChanges($event)"></app-edit-meal>
 <hr>
 <div id="filter">
-  <label>Filter by calories(default searches by less than input)</label>
-  <button (click)="filterMeals(true)" [class]="filteringBy(true)"> < </button>
-  <button (click)="filterMeals(false)" [class]="filteringBy(false)"> > </button>
-  <input [ngModelOptions]="{standalone: true}" [(ngModel)]="calorieNum">
+  <div class="form-group">
+    <label>Filter by calories(default searches by less than input)</label>
+  </div>
+  <div class="btn-group form-group">
+    <button (click)="filterMeals(true)" [class]="filteringBy(true)"> < </button>
+    <button (click)="filterMeals(false)" [class]="filteringBy(false)"> > </button>
+  </div>
+  <input type="text" [ngModelOptions]="{standalone: true}" [(ngModel)]="calorieNum" placeholder="Calories" class="form-control">
 </div>
+<hr>
 <div class="well" *ngFor="let meal of meals | filter:calorieNum:calorieFilter">
-  <button class="btn btn-xs btn-warning" (click)="editingMeal(meal)" >Edit</button>
-  <button class="btn btn-xs btn-danger" (click)="deleteMeal(meal)">Delete</button>
+  <div class="btn-group">
+    <button class="btn btn-xs btn-warning" (click)="editingMeal(meal)" >Edit</button>
+    <button class="btn btn-xs btn-danger" (click)="deleteMeal(meal)">Delete</button>
+  </div>
   <h3>{{meal.name}}</h3>
   <p>{{meal.details}}</p>
   <h5>Calories: {{meal.calories}}</h5>
