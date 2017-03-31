@@ -2,7 +2,14 @@
 <button (click)="newMeal()">Add New Meal</button>
 <app-new-meal [addingMeal]="addingMeal" (newMealSender)="saveMeal($event)"></app-new-meal>
 <app-edit-meal [selectedMeal]="selectedMeal" (editedMealSender)="saveChanges($event)"></app-edit-meal>
-<div class="well" *ngFor="let meal of meals">
+<hr>
+<div id="filter">
+  <label>Filter by calories(default searches by less than input)</label>
+  <button (click)="filterMeals(true)"> < </button>
+  <button (click)="filterMeals(false)"> > </button>
+  <input [ngModelOptions]="{standalone: true}" [(ngModel)]="calorieNum">
+</div>
+<div class="well" *ngFor="let meal of meals | filter:calorieNum:calorieFilter">
   <button class="btn btn-xs btn-warning" (click)="editingMeal(meal)" >Edit</button>
   <button class="btn btn-xs btn-danger" (click)="deleteMeal(meal)">Delete</button>
   <h3>{{meal.name}}</h3>

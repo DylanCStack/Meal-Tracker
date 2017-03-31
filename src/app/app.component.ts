@@ -20,6 +20,11 @@ constructor(public MealService: MealService){}
 
   meals: Meal[] = this.MealService.getMeals();
   title = 'Meal Tracker';
+  calorieFilter:boolean = true;
+
+  filterMeals(bool){
+    this.calorieFilter = bool;
+  }
 
   newMeal(){
     this.addingMeal=true;
